@@ -1,15 +1,15 @@
 import { useEffect, useState } from "react";
-import SingleCard from "./components/SingleCard";
+import SingleCard from "../../components/SingleCard";
 
-import "./App.css";
+import "./Level-12.css";
 
 const cardImages = [
-  { src: "./img/helmet-1.png", match: false },
-  { src: "./img/potion-1.png", match: false },
-  { src: "./img/ring-1.png", match: false },
-  { src: "./img/scroll-1.png", match: false },
-  { src: "./img/shield-1.png", match: false },
-  { src: "./img/sword-1.png", match: false },
+  { src: "./img/Koala-1.jpg", match: false },
+  { src: "./img/bear-1.png", match: false },
+  { src: "./img/elephant-1.png", match: false },
+  { src: "./img/horse-1.png", match: false },
+  { src: "./img/rabbit-1.png", match: false },
+  { src: "./img/kangaroo-1.png", match: false },
 ];
 
 const playSounds = () => {
@@ -26,7 +26,7 @@ const playSounds = () => {
   }, 1000);
 };
 
-function App() {
+function Level12() {
   const [cards, setCards] = useState([]);
   const [turns, setTurn] = useState(0);
   const [choiceOne, setChoiceOne] = useState(null);
@@ -98,7 +98,7 @@ function App() {
 
   return (
     <div className="App">
-      <h1>Magic Match</h1>
+      <h1 className="Head">Magic Match</h1>
       <button onClick={shuffleCards}>New Game</button>
       <div className="card-grid">
         {cards.map((card) => {
@@ -113,7 +113,7 @@ function App() {
           );
         })}
       </div>
-      <p>turns: {turns}</p>
+      <p className="Turn">turns: {turns}</p>
       {showCelebration && (
         <div className="celebration">
           {[...Array(50)].map((_, i) => (
@@ -135,4 +135,4 @@ function App() {
   );
 }
 
-export default App;
+export default Level12;
