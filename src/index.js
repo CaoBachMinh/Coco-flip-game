@@ -8,7 +8,7 @@ import Level10 from './levels/Level 10/Level-10';
 
 ReactDOM.render(
   <React.StrictMode>
-    <Level10 />
+    <Level12 />
   </React.StrictMode>,
   document.getElementById('root')
 );
