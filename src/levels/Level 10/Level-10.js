@@ -40,6 +40,7 @@ function Level10() {
       .map((card) => ({ ...card, id: Math.random() }));
     setChoiceOne(null);
     setChoiceTwo(null);
+    setCurrentPlay(false);
     setCards(shuffledCards);
     setTurn(0);
   };

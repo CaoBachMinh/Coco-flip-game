@@ -84,18 +84,11 @@ function Level6() {
     shuffleCards();
   }, []);
 
-  function checkWin(card){
-    return card.match === true
-  };
-
-  if (cardImages.every((card) => card.match==true)){
-      setCurrentPlay(true);
-  }
-
 
   // check for game completion
   useEffect(() => {
-    if (cards.every(checkWin)) {
+    if (cards.every((card) => card.match)) {
+      setCurrentPlay(true);
       setShowCelebration(true);
       // Hide celebration after animation duration (1s in this case)
       setTimeout(() => {
@@ -105,8 +98,6 @@ function Level6() {
   }, [cards]);
 
  
-
-  console.log(cards.every(checkWin))
 
   const navigate = useNavigate();
   function nextClick(){
