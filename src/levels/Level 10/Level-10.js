@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import SingleCard from "../../components/SingleCard";
-
+import { useNavigate } from "react-router";
 import "./Level-10.css";
 
 const cardImages = [
@@ -32,6 +32,7 @@ function Level10() {
   const [choiceTwo, setChoiceTwo] = useState(null);
   const [disabled, setDisabled] = useState(false);
   const [showCelebration, setShowCelebration] = useState(false);
+  const [currentPlay,setCurrentPlay] = useState(false);
   // shuffling the cards
   const shuffleCards = () => {
     const shuffledCards = [...cardImages, ...cardImages]
@@ -87,6 +88,7 @@ function Level10() {
   // check for game completion
   useEffect(() => {
     if (cards.every((card) => card.match)) {
+      setCurrentPlay(true);
       setShowCelebration(true);
       // Hide celebration after animation duration (1s in this case)
       setTimeout(() => {
@@ -95,10 +97,17 @@ function Level10() {
     }
   }, [cards]);
 
+  const navigate = useNavigate();
+  function nextClick(){
+    navigate('/level12',{replace:true});
+  }
+
   return (
     <div className="App">
+      <h1 className="Current-level">Level 3</h1>
       <h1 className="Head">Magic Match</h1>
       <button onClick={shuffleCards}>New Game</button>
+      <button className={currentPlay ? '':'hide'} onClick = {nextClick} >Next</button>
       <div className="card-grid10">
         {cards.map((card) => {
           return (

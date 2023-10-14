@@ -10,3 +10,10 @@ body {
   background: #C2FCD9;
   color: #fff;
 }
+
+.Current-level{
+  position: absolute;
+  font-size: 50px;
+  color: #181818;
+  transform: translate(-130%,-70%);
+}

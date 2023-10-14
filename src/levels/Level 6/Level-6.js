@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import SingleCard from "../../components/SingleCard";
-
+import {useNavigate } from "react-router";
 import "./Level-6.css";
 
 const cardImages = [
@@ -30,6 +30,7 @@ function Level6() {
   const [choiceTwo, setChoiceTwo] = useState(null);
   const [disabled, setDisabled] = useState(false);
   const [showCelebration, setShowCelebration] = useState(false);
+  const [currentPlay,setCurrentPlay] = useState(false);
   // shuffling the cards
   const shuffleCards = () => {
     const shuffledCards = [...cardImages, ...cardImages]
@@ -38,6 +39,7 @@ function Level6() {
     setChoiceOne(null);
     setChoiceTwo(null);
     setCards(shuffledCards);
+    setCurrentPlay(false);
     setTurn(0);
   };
 
@@ -82,9 +84,18 @@ function Level6() {
     shuffleCards();
   }, []);
 
+  function checkWin(card){
+    return card.match === true
+  };
+
+  if (cardImages.every((card) => card.match==true)){
+      setCurrentPlay(true);
+  }
+
+
   // check for game completion
   useEffect(() => {
-    if (cards.every((card) => card.match)) {
+    if (cards.every(checkWin)) {
       setShowCelebration(true);
       // Hide celebration after animation duration (1s in this case)
       setTimeout(() => {
@@ -93,10 +104,21 @@ function Level6() {
     }
   }, [cards]);
 
+ 
+
+  console.log(cards.every(checkWin))
+
+  const navigate = useNavigate();
+  function nextClick(){
+    navigate('/level8',{replace:true});
+  }
+
   return (
     <div className="App">
+      <h1 className="Current-level">Level 1</h1>
       <h1 className="Head">Magic Match</h1>
       <button onClick={shuffleCards}>New Game</button>
+      <button className={currentPlay ? '':'hide'} onClick = {nextClick} >Next</button>
       <div className="card-grid6">
         {cards.map((card) => {
           return (
