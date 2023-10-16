@@ -26,6 +26,7 @@ const playSounds = () => {
 };
 
 function Level10() {
+  const [count,setCount] = useState(0);
   const [cards, setCards] = useState([]);
   const [turns, setTurn] = useState(0);
   const [choiceOne, setChoiceOne] = useState(null);
@@ -42,6 +43,7 @@ function Level10() {
     setChoiceTwo(null);
     setCurrentPlay(false);
     setCards(shuffledCards);
+    setCount(0);
     setTurn(0);
   };
 
@@ -89,7 +91,10 @@ function Level10() {
   // check for game completion
   useEffect(() => {
     if (cards.every((card) => card.match)) {
-      setCurrentPlay(true);
+      setCount((count) => count + 1);
+      if (count === 1){
+        setCurrentPlay(true);
+      }
       setShowCelebration(true);
       // Hide celebration after animation duration (1s in this case)
       setTimeout(() => {
