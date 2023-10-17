@@ -1,4 +1,3 @@
-import react from "react";
 import Level6 from "./levels/Level 6/Level-6";
 import Level8 from "./levels/Level 8/Level-8";
 import Level10 from "./levels/Level 10/Level-10";
