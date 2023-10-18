@@ -1,23 +1,51 @@
 .hide {
-    display: none;
+  display: none;
 }
 
-.show{
+.show {
   margin-left: 20px;
+  color: black;
 }
 
-
-
-.start-button-off{
-  position: absolute;
+.Start-button {
   display: flex;
-  transform: rotateX(90deg);
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem; 
+  padding: 1rem;
 }
 
-.start-button-on{
-  font-size: 50px;
-  width: 500px;
-  height: 200px;
-  transform: translateY(120%);
+.start-button-off {
+  display: none;
 }
 
+.start-button-on,
+.refined-start-button { /* gộp các style chung */
+  cursor: pointer;
+  border: none;
+  border-radius: 10px;
+  background-color: #ffd700;
+  transition: transform 0.3s;
+  padding: 1rem;
+  text-align: center;
+  width: 80vw;
+  max-width: 500px;
+}
+
+.start-button-on:hover,
+.refined-start-button:hover {
+  transform: translateY(-5px);
+}
+
+.black-text {
+  color: black;
+}
+
+@media (max-width: 768px) {
+  .start-button-on,
+  .refined-start-button {
+    width: 90vw;
+    font-size: 4vw; 
+  }
+}
