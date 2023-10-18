@@ -8,6 +8,8 @@ import "./App.css";
 
 function App(){
     return(
+        <div>
+        <audio id="audio" src="../sound/background-music.mp3" type="audio/mp3" loop autoPlay/>
         <Router>
             <Routes>
                 <Route path = '/' element={<Level6/>}/>
@@ -16,6 +18,7 @@ function App(){
                 <Route path = '/level12' element={<Level12/>}/>
             </Routes>
         </Router>
+        </div>
     )
 }
 

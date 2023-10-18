@@ -9,6 +9,7 @@ const cardImages = [
   { src: "../img/elephant-1.png", match: false },
 ];
 
+
 const playSounds = () => {
   // Create a new Audio instance for the first sound
   const successSound = new Audio("/sound/short-success-sound.mp3");
