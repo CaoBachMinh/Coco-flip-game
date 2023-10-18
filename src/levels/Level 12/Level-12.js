@@ -27,6 +27,7 @@ const playSounds = () => {
 };
 
 function Level12() {
+  const [Compliment,setCompliment] = useState("Magic Match");
   const [cards, setCards] = useState([]);
   const [turns, setTurn] = useState(0);
   const [choiceOne, setChoiceOne] = useState(null);
@@ -68,6 +69,11 @@ function Level12() {
       if (choiceOne.src === choiceTwo.src) {
         // Play sounds
         playSounds();
+        setCompliment("Bé Giỏi Quá");
+        setTimeout(() => {
+          setCompliment("Magic Match")
+        }, 2000);
+
 
         setCards((prevCards) =>
           prevCards.map((card) =>
@@ -113,7 +119,7 @@ function Level12() {
   return (
     <div className="App">
       <h1 className="Current-level">Level 4</h1>
-      <h1 className="Head">Magic Match</h1>
+      <h1 className="Head">{Compliment}</h1>
       <button onClick={shuffleCards}>New Game</button>
       <button className={currentPlay ? 'show':'hide'} onClick = {nextClick} >Play Again</button>
       <div className="card-grid">
