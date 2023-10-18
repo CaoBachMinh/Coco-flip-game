@@ -107,7 +107,7 @@ function Level12() {
 
   const navigate = useNavigate();
   function nextClick(){
-    navigate('/',{replace:true});
+    navigate('/level6',{replace:true});
   }
 
   return (
@@ -115,7 +115,7 @@ function Level12() {
       <h1 className="Current-level">Level 4</h1>
       <h1 className="Head">Magic Match</h1>
       <button onClick={shuffleCards}>New Game</button>
-      <button className={currentPlay ? '':'hide'} onClick = {nextClick} >Play Again</button>
+      <button className={currentPlay ? 'show':'hide'} onClick = {nextClick} >Play Again</button>
       <div className="card-grid">
         {cards.map((card) => {
           return (

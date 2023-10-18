@@ -2,11 +2,11 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
-import Player from './Music';
+import Start from './Start-game';
 
 ReactDOM.render(
   <React.StrictMode>
-    <Player/>
+    <App/>
   </React.StrictMode>,
   document.getElementById('root')
 );

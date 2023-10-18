@@ -1,9 +1,11 @@
 .card {
   position: relative;
+  width: 200px;
+  transform: translateX(10%);
 }
 
 .card img {
-  width: 100%;
+  width: 200px;
   display: block;
   border: 2px solid #fff;
   border-radius: 6px;
@@ -14,6 +16,11 @@
   transform: rotateY(90deg);
   transition: all ease-in 0.2s;
   position: absolute;
+}
+
+.flipped{
+  width: 200px;
+  height: 200px;
 }
 
 .flipped .front {

@@ -117,7 +117,7 @@ function Level6() {
       <h1 className="Current-level">Level 1</h1>
       <h1 className="Head">Magic Match</h1>
       <button onClick={shuffleCards}>New Game</button>
-      <button className={currentPlay ? '':'hide'} onClick = {nextClick} >Next</button>
+      <button className={currentPlay ? 'show':'hide'} onClick = {nextClick} >Next</button>
       <div className="card-grid6">
         {cards.map((card) => {
           return (
