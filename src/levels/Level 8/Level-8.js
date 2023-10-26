@@ -25,7 +25,7 @@ const playSounds = () => {
 };
 
 function Level8() {
-  const [Compliment,setCompliment] = useState("Magic Match");
+  const [Compliment,setCompliment] = useState("Trò Chơi Lật Thẻ");
   const [cards, setCards] = useState([]);
   const [turns, setTurn] = useState(0);
   const [choiceOne, setChoiceOne] = useState(null);
@@ -69,7 +69,7 @@ function Level8() {
         playSounds();
         setCompliment("Bé Giỏi Quá");
         setTimeout(() => {
-          setCompliment("Magic Match")
+          setCompliment("Trò Chơi Lật Thẻ")
         }, 1000);
 
         setCards((prevCards) =>
@@ -117,8 +117,8 @@ function Level8() {
     <div className="App">
       <h1 className="Current-level">Level 2</h1>
       <h1 className="Head">{Compliment}</h1>
-      <button onClick={shuffleCards}>New Game</button>
-      <button className={currentPlay ? 'show':'hide'} onClick = {nextClick} >Next</button>
+      <button onClick={shuffleCards}>Bắt Đầu</button>
+      <button className={currentPlay ? 'show':'hide'} onClick = {nextClick} >Màn Tiếp Theo</button>
       <div className="card-grid8">
         {cards.map((card) => {
           return (
