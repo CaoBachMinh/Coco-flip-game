@@ -8,7 +8,6 @@ body {
   font-size: 1.5em;
   text-align: center;
   background: #C2FCD9;
-  color: #fff;
 }
 
 .Current-level{
@@ -17,3 +16,4 @@ body {
   color: #181818;
   transform: translate(-130%,-70%);
 }
+

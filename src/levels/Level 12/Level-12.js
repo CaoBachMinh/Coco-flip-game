@@ -21,9 +21,9 @@ const playSounds = () => {
 
   // Use setTimeout to play the second sound after 1 second
   setTimeout(() => {
-    const congratsSound = new Audio("/sound/congrats.mp3");
+    const congratsSound = new Audio("/sound/be-gioi-qua.mp3");
     congratsSound.play();
-  }, 1000);
+  }, 200);
 };
 
 function Level12() {

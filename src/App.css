@@ -49,3 +49,47 @@
     font-size: 4vw; 
   }
 }
+
+.start-container {
+  margin-top: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: relative; /* Added positioning context */
+  top: 50%;
+  left: 50%; /* Added horizontal positioning */
+  transform: translate(-50%, -50%); /* Corrected syntax for transform */
+  align-items: center;
+  background-color: #C2FCD9;
+  font-size: 18px;
+  color: #ff4500;
+  font-family: "Comic Sans MS", cursive, sans-serif; /* Separated font values with commas */
+}
+
+.start-button {
+  padding: 20px 40px;
+  font-size: 24px;
+  background-color: #ffd700;
+  border: none;
+  border-radius: 50px;
+  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  transition: all 0.3s;
+  font-family: "Comic Sans MS", cursive, sans-serif;
+}
+
+.start-button:hover {
+  background-color: #ffc700;
+  transform: translateY(-5px);
+}
+
+.App {
+  height: 300px;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+.timer {
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 18px;
+}
