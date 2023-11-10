@@ -14,7 +14,7 @@
 /* front of the card - the pictures */
 .card .front {
   transform: rotateY(90deg);
-  transition: all ease-in 0.2s;
+  transition: all ease-in 0.3s;
   position: absolute;
 }
 
@@ -29,7 +29,7 @@
 }
 
 .card .back {
-  transition: all ease-in 0.2s;
+  transition: all ease-in 0.3s;
   transition-delay: 0.2;
 }
 
