@@ -72,7 +72,7 @@ function Level12() {
         setCompliment("Bé Giỏi Quá");
         setTimeout(() => {
           setCompliment("Trò Chơi Lật Thẻ")
-        }, 2000);
+        }, 1000);
 
 
         setCards((prevCards) =>
@@ -82,7 +82,7 @@ function Level12() {
         );
         reset();
       } else {
-        setTimeout(reset, 1000);
+        setTimeout(reset, 500);
       }
       setTurn((prevState) => prevState + 1);
     }
@@ -113,7 +113,7 @@ function Level12() {
 
   const navigate = useNavigate();
   function nextClick(){
-    navigate('/level6',{replace:true});
+    navigate('/',{replace:true});
   }
 
   return (

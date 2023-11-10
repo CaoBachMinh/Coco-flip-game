@@ -37,3 +37,11 @@
   transform: rotateY(90deg);
   transition-delay: 0s;
 }
+
+.flipped .front-match{
+  display: none;
+}
+
+.flipped .back-match{
+  display: none;
+}

@@ -79,7 +79,7 @@ function Level8() {
         );
         reset();
       } else {
-        setTimeout(reset, 1000);
+        setTimeout(reset, 500);
       }
       setTurn((prevState) => prevState + 1);
     }

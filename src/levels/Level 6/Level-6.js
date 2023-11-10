@@ -57,6 +57,7 @@ function Level6() {
     choiceOne ? setChoiceTwo(card) : setChoiceOne(card);
   };
 
+
   // compare cards
   useEffect(() => {
     // MY PATCH
@@ -70,6 +71,7 @@ function Level6() {
         setCompliment("Bé Giỏi Quá");
         setTimeout(() => {
           setCompliment("Trò Chơi Lật Thẻ")
+        
         }, 1000);
 
         setCards((prevCards) =>
@@ -79,7 +81,7 @@ function Level6() {
         );
         reset();
       } else {
-        setTimeout(reset, 1000);
+        setTimeout(reset, 500);
       }
       setTurn((prevState) => prevState + 1);
     }
