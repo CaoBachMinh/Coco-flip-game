@@ -10,7 +10,6 @@ import "./App.css";
 export default function App() {
     const [isPlayingGuide, setIsPlayingGuide] = useState(false);
     const [hasStarted, setHasStarted] = useState(false);
-    const [time, setTime] = useState(30 * 60);
     const guideAudioRef = useRef(null);
     const gameAudioRef = useRef(null);
     useEffect(() => {
@@ -49,7 +48,8 @@ export default function App() {
                         {isPlayingGuide && <p>Đang phát âm thanh ...</p>}
                     </div>
                 ) : (
-                    <><div className="Timer">
+                    <>
+                    <div className="Timer">
                         <Timer />
                     </div>
                         <Routes>

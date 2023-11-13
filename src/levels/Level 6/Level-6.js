@@ -5,8 +5,8 @@ import "./Level-6.css";
 
 const cardImages = [
   { src: "../img/Koala-1.jpg", match: false },
-  { src: "../img/bear-1.png", match: false },
-  { src: "../img/elephant-1.png", match: false },
+  { src: "../img/bear.jpg", match: false },
+  { src: "../img/elephant.jpg", match: false },
 ];
 
 
@@ -120,7 +120,7 @@ function Level6() {
   }
 
   return (
-    <div className="App">
+    <div className="Level6">
       <h1 className="Current-level">Level 1</h1>
       <h1 className="Head">{Compliment}</h1>
       <button onClick={shuffleCards}>Bắt Đầu</button>

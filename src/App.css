@@ -88,8 +88,16 @@
   max-width: 1000px;
   margin: 0 auto;
 }
+
+.Timer{
+  width: 300px;
+  position: relative;
+  transform: translate(780px,50px);
+}
+
 .timer {
   text-align: center;
+  width: 400px;
   margin-bottom: 20px;
   font-size: 18px;
 }

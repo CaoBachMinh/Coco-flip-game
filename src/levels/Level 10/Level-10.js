@@ -5,10 +5,10 @@ import "./Level-10.css";
 
 const cardImages = [
   { src: "./img/Koala-1.jpg", match: false },
-  { src: "./img/bear-1.png", match: false },
-  { src: "./img/elephant-1.png", match: false },
-  { src: "./img/horse-1.png", match: false },
-  { src: "./img/rabbit-1.png", match: false },
+  { src: "./img/bear.jpg", match: false },
+  { src: "./img/elephant.jpg", match: false },
+  { src: "./img/horse.jpg", match: false },
+  { src: "./img/rabbit.jpg", match: false },
 ];
 
 const playSounds = () => {
@@ -122,7 +122,7 @@ function Level10() {
   }
 
   return (
-    <div className="App">
+    <div className="Level10">
       <h1 className="Current-level">Level 3</h1>
       <h1 className="Head">{Compliment}</h1>
       <button onClick={shuffleCards}>Bắt Đầu</button>
