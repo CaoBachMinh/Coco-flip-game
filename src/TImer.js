@@ -1,43 +1,39 @@
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState, useEffect } from "react";
 import "./App.css";
+import Popup from "./alart-popup";
 
-export function Timer(){
-    const [timeRemaining, setTimeRemaining] = useState(30 * 60);
-    const [intervalId, setIntervalId] = useState(null);
+export function Timer({setShowPopup}) {
+  const [timeRemaining, setTimeRemaining] = useState(5);
 
-    const formattedTimeRemaining = `${Math.floor(timeRemaining / 60)
+  const formattedTimeRemaining = `${Math.floor(timeRemaining / 60)
     .toString()
     .padStart(2, "0")}:${(timeRemaining % 60).toString().padStart(2, "0")}`;
 
   useEffect(() => {
-    const id = setInterval(() => {
+    const intervalId = setInterval(() => {
       setTimeRemaining((prevTime) => {
         if (prevTime <= 1) {
-          clearInterval(id);
+          clearInterval(intervalId);
+          setShowPopup(true); // Show the popup when time reaches 0
           return 0;
         }
         return prevTime - 1;
       });
     }, 1000);
 
-    setIntervalId(id);
-
     // Cleanup effect
     return () => {
-      clearInterval(id);
+      clearInterval(intervalId);
     };
-  }, []);
-  useEffect(() => {
-    if (timeRemaining === 0) {
-      window.alert(
-        "Bạn đã chơi quá 30 phút! Hãy nghỉ ngơi và tránh chơi quá lâu."
-      );
-    }
-  }, [timeRemaining]);
-    return(
-        <div className="timer">
-        <strong>Thời gian còn lại: </strong> {formattedTimeRemaining}
-        <p>Khuyến cáo chơi game 30 phút/ngày</p>
-      </div>
-    );
+  }, []); // Empty dependency array to run only once on mount
+
+  return (
+    <div className="timer">
+      <strong>Thời gian còn lại: </strong> {formattedTimeRemaining}
+      <p>Khuyến cáo chơi game 30 phút/ngày</p>
+    </div>
+
+
+
+  );
 }

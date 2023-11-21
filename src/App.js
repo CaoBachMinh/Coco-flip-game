@@ -7,11 +7,14 @@ import Level12 from "./levels/Level 12/Level-12";
 import { BrowserRouter as Router, Route, Routes, Link } from "react-router-dom";
 import "./App.css";
 // import "./app.scss";
+import Popup from './alart-popup';
 export default function App() {
     const [isPlayingGuide, setIsPlayingGuide] = useState(false);
     const [hasStarted, setHasStarted] = useState(false);
     const guideAudioRef = useRef(null);
     const gameAudioRef = useRef(null);
+    const [showPopup, setShowPopup] = useState(false);
+
     useEffect(() => {
         if (hasStarted) {
             gameAudioRef.current.play();
@@ -45,20 +48,28 @@ export default function App() {
                         <button className="start-button" onClick={startGame}>
                             Nghe hướng dẫn chơi
                         </button>
-                        
+
                         {isPlayingGuide && <p>Đang phát âm thanh ...</p>}
                     </div>
                 ) : (
                     <>
-                        <div className="Timer">
-                            <Timer />
+                        {!showPopup ? (
+                            <>
+                            <div className="Timer">
+                            <Timer setShowPopup={setShowPopup} />
                         </div>
                         <Routes>
                             <Route path='/' element={<Level6 />} />
                             <Route path='/level8' element={<Level8 />} />
                             <Route path='/level10' element={<Level10 />} />
                             <Route path='/level12' element={<Level12 />} />
-                        </Routes></>
+                        </Routes>
+                        </>
+                        ) : (
+                            <Popup />
+                        )}
+
+                    </>
                 )}
 
 
