@@ -45,13 +45,14 @@ export default function App() {
                         <button className="start-button" onClick={startGame}>
                             Nghe hướng dẫn chơi
                         </button>
+                        
                         {isPlayingGuide && <p>Đang phát âm thanh ...</p>}
                     </div>
                 ) : (
                     <>
-                    <div className="Timer">
-                        <Timer />
-                    </div>
+                        <div className="Timer">
+                            <Timer />
+                        </div>
                         <Routes>
                             <Route path='/' element={<Level6 />} />
                             <Route path='/level8' element={<Level8 />} />
@@ -59,7 +60,7 @@ export default function App() {
                             <Route path='/level12' element={<Level12 />} />
                         </Routes></>
                 )}
-                       
+
 
             </Router>
         </div>
