@@ -1,56 +1,45 @@
 import React from 'react'
 
 import Alert from 'react-popup-alert'
-
+import './style.scss';
 const Popup = () => {
   const [alert, setAlert] = React.useState({
-    type: 'error',
-    text: 'This is a alert message',
-    show: false
+    type: 'success',
+    text: 'Hãy nghỉ ngơi và quay lại chơi vào ngày mai nhé',
+    show: true
   })
 
   function onCloseAlert() {
     setAlert({
-      type: '',
-      text: '',
-      show: false
-    })
-  }
-
-  function onShowAlert(type) {
-    setAlert({
-      type: type,
-      text: 'Demo alert',
+      type: 'success',
+      text: 'Hãy nghỉ ngơi và quay lại chơi vào ngày mai nhé',
       show: true
     })
+    window.open("https://coco-game-hackathon.vercel.app", '_blank');
   }
-
   return (
     <div>
-      <div style={{ display: 'flex', justifyContent: 'center', marginTop: 50 }}>
-        <button onClick={() => onCloseAlert()}>Hide alert</button>
-        <button onClick={() => onShowAlert('success')}>
-          Show success alert
-        </button>
-        <button onClick={() => onShowAlert('error')}>Show error alert</button>
-        <button onClick={() => onShowAlert('warning')}>
-          Show warning alert
-        </button>
+      <div>
+        <Alert
+          header={'Bạn đã hết thời gian chơi hôm nay'}
+          btnText={'Quay lại trang chủ'}
+          text={alert.text}
+          type={alert.type}
+          show={alert.show}
+          onClosePress={onCloseAlert}
+          pressCloseOnOutsideClick={false}
+          showBorderBottom={true}
+          alertStyles={{}}
+          headerStyles={{}}
+          textStyles={{
+
+          }}
+          buttonStyles={{
+            
+          }}
+        />
       </div>
-      <Alert
-        header={'Header'}
-        btnText={'Close'}
-        text={alert.text}
-        type={alert.type}
-        show={alert.show}
-        onClosePress={onCloseAlert}
-        pressCloseOnOutsideClick={true}
-        showBorderBottom={true}
-        alertStyles={{}}
-        headerStyles={{}}
-        textStyles={{}}
-        buttonStyles={{}}
-      />
+
     </div>
   )
 }

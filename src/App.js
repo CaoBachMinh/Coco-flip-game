@@ -6,7 +6,6 @@ import { Timer } from './TImer';
 import Level12 from "./levels/Level 12/Level-12";
 import { BrowserRouter as Router, Route, Routes, Link } from "react-router-dom";
 import "./App.css";
-// import "./app.scss";
 import Popup from './alart-popup';
 export default function App() {
     const [isPlayingGuide, setIsPlayingGuide] = useState(false);
