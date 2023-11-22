@@ -1,9 +1,8 @@
 import React, { useState, useEffect } from "react";
 import "./App.css";
-import Popup from "./alart-popup";
 
 export function Timer({setShowPopup}) {
-  const [timeRemaining, setTimeRemaining] = useState(5);
+  const [timeRemaining, setTimeRemaining] = useState(30*60);
 
   const formattedTimeRemaining = `${Math.floor(timeRemaining / 60)
     .toString()
