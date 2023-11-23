@@ -1,7 +1,6 @@
 import React from 'react'
 
 import Alert from 'react-popup-alert'
-import './style.scss';
 const Popup = () => {
   const [alert, setAlert] = React.useState({
     type: 'success',
