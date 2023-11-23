@@ -1,5 +1,5 @@
 // Import necessary dependencies
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect,useRef } from 'react';
 import Popup from 'reactjs-popup';
 import './alert-popup.css';
 
@@ -7,17 +7,33 @@ import './alert-popup.css';
 const Pop_up = () => {
   // State to control the open/close state of the popup
   const [isOpen, setIsOpen] = useState(true);
+  const modalRef = useRef();
 
   // useEffect to control when the popup should appear (in this case, on component mount)
   useEffect(() => {
-    // You can set a timer or perform some other logic to control when the popup should appear.
-    // For now, let's just show the popup when the component mounts.
-    // You can modify this logic as per your requirements.
-    setIsOpen(true);
+    const handleClickOutside = (event) => {
+      if (modalRef.current && !modalRef.current.contains(event.target)) {
+        // Clicked outside the modal, do not close it
+        return;
+      }
+
+      // Clicked inside the modal or its children, let onClose handle closing
+      setIsOpen(false);
+    };
+
+    // Attach the event listener when the component mounts
+    document.addEventListener('mousedown', handleClickOutside);
+
+    // Remove the event listener when the component unmounts
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+    };
   }, []);
+
   function Back_Home(){
     window.open("https://coco-game-tau.vercel.app/", '_blank');
   }
+
   // Render the component
   return (
     <Popup
@@ -27,7 +43,7 @@ const Pop_up = () => {
       nested
     >
       {close => (
-        <div className="modal">
+        <div className="modal" ref={modalRef}>
           <div className="header"> 
             <h2> Bạn đã hết thời gian chơi hôm nay</h2>
           </div>
