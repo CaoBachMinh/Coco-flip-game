@@ -1,7 +1,6 @@
 import React from 'react'
 
-import Alert from 'react-popup-alert'
-import './style.scss';
+//import Alert from 'react-popup-alert'
 const Popup = () => {
   const [alert, setAlert] = React.useState({
     type: 'success',
@@ -19,7 +18,7 @@ const Popup = () => {
   }
   return (
     <div>
-      <div>
+      {/* <div>
         <Alert
           header={'Bạn đã hết thời gian chơi hôm nay'}
           btnText={'Quay lại trang chủ'}
@@ -38,7 +37,7 @@ const Popup = () => {
             
           }}
         />
-      </div>
+      </div> */}
 
     </div>
   )
