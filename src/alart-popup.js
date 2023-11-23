@@ -1,52 +1,60 @@
-import React from 'react';
+// Import necessary dependencies
+import React, { useState, useEffect } from 'react';
 import Popup from 'reactjs-popup';
+import './alert-popup.css';
 
-export default function Pop_up  (){
-  <Popup
-    trigger={<button className="button"> Open Modal </button>}
-    modal
-    nested
-  >
-    {close => (
-      <div className="modal">
-        <button className="close" onClick={close}>
-          &times;
-        </button>
-        <div className="header"> Modal Title </div>
-        <div className="content">
-          {' '}
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque, a nostrum.
-          Dolorem, repellat quidem ut, minima sint vel eveniet quibusdam voluptates
-          delectus doloremque, explicabo tempore dicta adipisci fugit amet dignissimos?
-          <br />
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequatur sit
-          commodi beatae optio voluptatum sed eius cumque, delectus saepe repudiandae
-          explicabo nemo nam libero ad, doloribus, voluptas rem alias. Vitae?
+// Create the Pop_up component
+const Pop_up = () => {
+  // State to control the open/close state of the popup
+  const [isOpen, setIsOpen] = useState(true);
+
+  // useEffect to control when the popup should appear (in this case, on component mount)
+  useEffect(() => {
+    // You can set a timer or perform some other logic to control when the popup should appear.
+    // For now, let's just show the popup when the component mounts.
+    // You can modify this logic as per your requirements.
+    setIsOpen(true);
+  }, []);
+  function Back_Home(){
+    window.open("https://coco-game-tau.vercel.app/", '_blank');
+  }
+  // Render the component
+  return (
+    <Popup
+      open={isOpen}
+      onClose={() => setIsOpen(false)}
+      modal
+      nested
+    >
+      {close => (
+        <div className="modal">
+          <div className="header"> 
+            <h2> Bạn đã hết thời gian chơi hôm nay</h2>
+          </div>
+          <div className="content">
+            {/* Your content goes here */}
+            <p>
+            Hãy nghỉ ngơi và quay lại chơi vào ngày mai nhé
+            </p>
+            
+          </div>
+          <div className="actions">
+            {/* Your actions go here */}
+            <button
+              className="button"
+              onClick={() => {
+                console.log('modal closed');
+                Back_Home();
+              }}
+            >
+              Quay lại trang chủ
+            </button>
+          </div>
         </div>
-        <div className="actions">
-          <Popup
-            trigger={<button className="button"> Trigger </button>}
-            position="top center"
-            nested
-          >
-            <span>
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Beatae
-              magni omnis delectus nemo, maxime molestiae dolorem numquam
-              mollitia, voluptate ea, accusamus excepturi deleniti ratione
-              sapiente! Laudantium, aperiam doloribus. Odit, aut.
-            </span>
-          </Popup>
-          <button
-            className="button"
-            onClick={() => {
-              console.log('modal closed ');
-              close();
-            }}
-          >
-            close modal
-          </button>
-        </div>
-      </div>
-    )}
-  </Popup>
+      )}
+    </Popup>
+  );
 };
+
+// Export the component
+export default Pop_up;
